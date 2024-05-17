@@ -20,14 +20,14 @@ const Login = () => {
     const onLogin = async () => {
         try {
             setLoading(false)
-            const response = await axios.post(`/api/users/login`, user)
+            const response = await axios.post('/api/users/login', user)
             console.log("Login success", response.data);
             toast.success('Successfully Logged In');
             router.push('/profile')
 
         } catch (error: any) {
-            console.log('Login failed', error.message)
-            toast.error(error.message)
+            console.log('Login failed', error?.response?.data?.message || error.message);
+            toast.error(error?.response?.data?.message || 'An error occurred');
         } finally {
             setLoading(false)
         }
@@ -75,7 +75,7 @@ const Login = () => {
                 {loading ? 'loading...' : 'Login'}
             </button>
             <span>
-                Don't have an account ?
+                {"Don't have an account ?"}
                 <Link href="/signup" className="p-2  mb-4 focus:outline-none focus:border-gray-600 text-gray-500">
                     Signup now
                 </Link>

@@ -16,24 +16,25 @@ export default function VerifyEmailPage() {
         setToken(urlToken || "");
     }, []);
 
-    useEffect(() => {
-        if(token.length > 0) {
-            verifyUserEmail();
-        }
-    }, [token]);
-    
+
     const verifyUserEmail = async () => {
         try {
-            await axios.post('/api/users/verifyemail', {token})
+            await axios.post('/api/users/verifyemail', { token })
             setVerified(true);
-        } catch (error:any) {
+        } catch (error: any) {
             setError(true);
             console.log(error?.reponse?.data);
         }
     }
 
+    useEffect(() => {
+        if (token.length > 0) {
+            verifyUserEmail();
+        }
+    }, [token]);
 
-    return(
+
+    return (
         <div className="flex flex-col items-center justify-center min-h-screen py-2">
 
             <h1 className="text-4xl">Verify Email</h1>
@@ -50,7 +51,7 @@ export default function VerifyEmailPage() {
             {error && (
                 <div>
                     <h2 className="text-2xl bg-red-500 text-black">Error</h2>
-                    
+
                 </div>
             )}
         </div>

@@ -49,7 +49,7 @@ const SignUp = () => {
             <hr />
             <label htmlFor="username">Username</label>
             <input
-                className="p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600"
+                className="p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-gray-800"
                 id="username"
                 type="text"
                 value={user.username}
@@ -59,7 +59,7 @@ const SignUp = () => {
 
             <label htmlFor="email" >Email</label>
             <input
-                className="p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600"
+                className="p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-gray-800"
                 id="email"
                 type="text"
                 value={user.email}
@@ -69,7 +69,7 @@ const SignUp = () => {
 
             <label htmlFor="password">Password</label>
             <input
-                className="p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600"
+                className="p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-gray-800"
                 id="password"
                 type="password"
                 value={user.password}
@@ -78,7 +78,7 @@ const SignUp = () => {
             />
             <label htmlFor="password">Confirm Password</label>
             <input
-                className="p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600"
+                className="p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-gray-800"
                 id="password_confirmation"
                 type="password"
                 value={user.password_confirmation}
@@ -86,7 +86,7 @@ const SignUp = () => {
                 onChange={(e) => setUser({ ...user, password_confirmation: e.target.value })}
             />
             <button
-                className="p-2 border border-gray-300 rounded-lg bg-gray-500 mb-4 focus:outline-none focus:border-gray-600 text-white disabled:bg-gray-400"
+                className="p-2 border border-gray-300 rounded-lg bg-gray-500 mb-4 focus:outline-none focus:border-gray-600 disabled:bg-gray-400 text-gray-950 cursor-pointer"
                 onClick={onSignUp}
                 disabled={buttonDisabled}
             >

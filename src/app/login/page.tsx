@@ -49,7 +49,7 @@ const Login = () => {
 
             <label htmlFor="email" >Email</label>
             <input
-                className="p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600"
+                className="p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-gray-800"
                 id="email"
                 type="text"
                 value={user.email}
@@ -59,14 +59,19 @@ const Login = () => {
 
             <label htmlFor="password">Password</label>
             <input
-                className="p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600"
+                className="p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-gray-800"
                 id="password"
                 type="password"
                 value={user.password}
                 placeholder="password"
                 onChange={(e) => setUser({ ...user, password: e.target.value })}
             />
-            <span className="text-gray-500 hover:cursor-pointer" onClick={async () => router.push('/forgotpassword')}>Forget Password ?</span>
+            <span
+                className="text-gray-500 hover:cursor-pointer"
+                onClick={async () => router.push('/forgotpassword')}
+            >
+                Forget Password ?
+            </span>
             <button
                 className="p-2 border border-gray-300 rounded-lg bg-gray-500 mb-4 focus:outline-none focus:border-gray-600 text-white"
                 onClick={onLogin}

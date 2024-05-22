@@ -12,6 +12,10 @@ export function middleware(request: NextRequest) {
     if (!isPublicUrl && !token) {
         return NextResponse.redirect(new URL('/login', request.nextUrl))
     }
+    // Redirect users visiting the root path `/` to a specific page (e.g., /profile)
+    if (path === '/') {
+        return NextResponse.redirect(new URL('/profile', request.nextUrl));
+    }
 }
 
 // See "Matching Paths" below to learn more

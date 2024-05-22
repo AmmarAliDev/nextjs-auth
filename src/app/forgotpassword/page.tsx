@@ -1,13 +1,12 @@
 "use client";
 
 import axios from "axios";
-import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
+import React, { useEffect, useState } from "react";
 
 
 const ForgotPassword = () => {
 
-    const [error, setError] = useState(false);
     const [user, setUser] = useState({
         email: "",
     })
@@ -27,18 +26,11 @@ const ForgotPassword = () => {
         try {
             await axios.post('/api/users/forgotpassword', { email: user.email })
         } catch (error: any) {
-            setError(true);
             toast.error(error.message.data.error)
             console.log(error.response.data?.error);
         }
     }
 
-
-    // useEffect(() => {
-    //     if (token.length > 0) {
-    //         resetPassword();
-    //     }
-    // }, [token]);
 
     return (
         <div className="flex flex-col items-center justify-center min-h-screen py-2">
@@ -67,9 +59,5 @@ const ForgotPassword = () => {
 }
 
 export default ForgotPassword
-
-
-
-
 
 
